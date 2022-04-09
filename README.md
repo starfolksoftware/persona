@@ -1,25 +1,18 @@
 <p align="center"><img width="200" src="https://user-images.githubusercontent.com/4984175/162582621-80d3d4ec-83c8-4614-b429-e893af474ce9.png" alt="Logo Kalibrant"></p>
 
-<p align="center">
-    <a href="https://github.com/starfolksoftware/persona/actions">
-        <img src="https://github.com/starfolksoftware/persona/actions/workflows/run-tests.yml/badge.svg" alt="Build Status">
-    </a>
-    <a href="https://github.com/starfolksoftware/persona/actions">
-        <img src="https://github.com/starfolksoftware/persona/actions/workflows/php-cs-fixer.yml/badge.svg" alt="Build Status">
-    </a>
-    <a href="https://github.com/starfolksoftware/persona/actions">
-        <img src="https://github.com/starfolksoftware/persona/actions/workflows/phpstan.yml/badge.svg" alt="Build Status">
-    </a>
-    <a href="https://packagist.org/packages/starfolksoftware/persona">
-        <img src="https://img.shields.io/packagist/dt/starfolksoftware/persona" alt="Total Downloads">
-    </a>
-    <a href="https://packagist.org/packages/starfolksoftware/persona">
-        <img src="https://img.shields.io/packagist/v/starfolksoftware/persona" alt="Latest Stable Version">
-    </a>
-    <a href="https://packagist.org/packages/starfolksoftware/persona">
-        <img src="https://img.shields.io/packagist/l/starfolksoftware/persona" alt="License">
-    </a>
-</p>
+[![run-tests](https://github.com/starfolksoftware/persona/actions/workflows/run-tests.yml/badge.svg)](https://github.com/starfolksoftware/persona/actions/workflows/run-tests.yml)
+[![Check & fix styling](https://github.com/starfolksoftware/persona/actions/workflows/php-cs-fixer.yml/badge.svg)](https://github.com/starfolksoftware/persona/actions/workflows/php-cs-fixer.yml)
+[![PHPStan](https://github.com/starfolksoftware/persona/actions/workflows/phpstan.yml/badge.svg)](https://github.com/starfolksoftware/persona/actions/workflows/phpstan.yml)
+[![Update Changelog](https://github.com/starfolksoftware/persona/actions/workflows/update-changelog.yml/badge.svg)](https://github.com/starfolksoftware/persona/actions/workflows/update-changelog.yml)
+<a href="https://packagist.org/packages/starfolksoftware/persona">
+    <img src="https://img.shields.io/packagist/dt/starfolksoftware/persona" alt="Total Downloads">
+</a>
+<a href="https://packagist.org/packages/starfolksoftware/persona">
+    <img src="https://img.shields.io/packagist/v/starfolksoftware/persona" alt="Latest Stable Version">
+</a>
+<a href="https://packagist.org/packages/starfolksoftware/persona">
+    <img src="https://img.shields.io/packagist/l/starfolksoftware/persona" alt="License">
+</a>
 
 # Introduction
 
