@@ -1,22 +1,6 @@
+# Introduction
 
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/support-ukraine.svg?t=1" />](https://supportukrainenow.org)
-
-# A simple and straightforward Laravel user permissions package.
-
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/starfolksoftware/persona.svg?style=flat-square)](https://packagist.org/packages/starfolksoftware/persona)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/starfolksoftware/persona/run-tests?label=tests)](https://github.com/starfolksoftware/persona/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/starfolksoftware/persona/Check%20&%20fix%20styling?label=code%20style)](https://github.com/starfolksoftware/persona/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/starfolksoftware/persona.svg?style=flat-square)](https://packagist.org/packages/starfolksoftware/persona)
-
-This is where your description should go. Limit it to a paragraph or two. Consider adding a small example.
-
-## Support us
-
-[<img src="https://github-ads.s3.eu-central-1.amazonaws.com/persona.jpg?t=1" width="419px" />](https://spatie.be/github-ad-click/persona)
-
-We invest a lot of resources into creating [best in class open source packages](https://spatie.be/open-source). You can support us by [buying one of our paid products](https://spatie.be/open-source/support-us).
-
-We highly appreciate you sending us a postcard from your hometown, mentioning which of our package(s) you are using. You'll find our address on [our contact page](https://spatie.be/about-us). We publish all received postcards on [our virtual postcard wall](https://spatie.be/open-source/postcards).
+A simple, elagant and straight-foward user permissions package for you Laravel applications.
 
 ## Installation
 
@@ -43,21 +27,52 @@ This is the contents of the published config file:
 
 ```php
 return [
+    'roles' => [
+        // 'owner' => [
+        //     'key' => 'owner',
+        //     'name' => 'Owner',
+        //     'permissions' => ['*'],
+        // ],
+    ],
 ];
-```
-
-Optionally, you can publish the views using
-
-```bash
-php artisan vendor:publish --tag="persona-views"
 ```
 
 ## Usage
 
+Add the `HasRole` trait to your user model:
+
 ```php
-$persona = new StarfolkSoftware\Persona();
-echo $persona->echoPhrase('Hello, StarfolkSoftware!');
+use StarfolkSoftware\Persona\HasRole;
+
+class User extends Authenticatable
+{
+    use HasRole;
+
+    // ...
+}
 ```
+
+Register your roles and permissions in the config file:
+
+```php
+return [
+    'roles' => [
+        'owner' => [
+            'key' => 'owner', // must be unique
+            'name' => 'Owner',
+            'permissions' => ['*'],
+        ],
+    ],
+];
+```
+
+You can check if a user has a particular permission as in the following:
+
+```php
+$user->hasPermission('post:edit');
+```
+
+Giving the `permissions` key the value `'*'` means the `hasPermission(...)` method will always return true.
 
 ## Testing
 
@@ -79,7 +94,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Faruk Nasir](https://github.com/starfolksoftware)
+- [Faruk Nasir](https://github.com/frknasir)
 - [All Contributors](../../contributors)
 
 ## License

@@ -4,7 +4,6 @@ namespace StarfolkSoftware\Persona;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use StarfolkSoftware\Persona\Commands\PersonaCommand;
 
 class PersonaServiceProvider extends PackageServiceProvider
 {
@@ -19,7 +18,25 @@ class PersonaServiceProvider extends PackageServiceProvider
             ->name('persona')
             ->hasConfigFile()
             ->hasViews()
-            ->hasMigration('create_persona_table')
-            ->hasCommand(PersonaCommand::class);
+            ->hasMigration('create_persona_table');
+    }
+
+    public function packageBooted()
+    {
+        // register all roles
+        collect(config('persona.roles', []))->each(
+            fn ($role) => Persona::role(
+                $role['key'],
+                $role['name'],
+                $role['permissions'] ?? []
+            )
+        );
+
+        // register all permissions
+        $permissions = collect(config('persona.roles', []))->flatMap(
+            fn ($role) => $role['permissions'] ?? []
+        )->unique()->sort()->values()->all();
+
+        Persona::permissions($permissions);
     }
 }
