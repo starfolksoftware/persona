@@ -2,15 +2,13 @@
 
 namespace StarfolkSoftware\Persona;
 
-use StarfolkSoftware\Persona\Role;
 use Illuminate\Support\Str;
-use StarfolkSoftware\Persona\Persona;
 
 trait HasRole
 {
     /**
      * Returns the user's role.
-     * 
+     *
      * @return \StarfolkSoftware\Persona\Role
      */
     public function role(): Role
@@ -22,7 +20,7 @@ trait HasRole
 
     /**
      * Checks if the user has the given role.
-     * 
+     *
      * @param  string  $role
      * @return bool
      */
@@ -33,7 +31,7 @@ trait HasRole
 
     /**
      * Get the user's permissions.
-     * 
+     *
      * @return array
      */
     public function permissions(): array
@@ -43,7 +41,7 @@ trait HasRole
 
     /**
      * Checks if the user has the given permission.
-     * 
+     *
      * @param  string  $permission
      * @return bool
      */

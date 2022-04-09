@@ -3,7 +3,6 @@
 namespace StarfolkSoftware\Persona\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Database\Schema\Blueprint;
 use Orchestra\Testbench\TestCase as Orchestra;
 use StarfolkSoftware\Persona\PersonaServiceProvider;
 use StarfolkSoftware\Persona\Tests\Models\UserWithRole;
@@ -51,7 +50,7 @@ class TestCase extends Orchestra
                     'products:update',
                     'products:delete',
                 ],
-            ]
+            ],
         ]);
     }
 

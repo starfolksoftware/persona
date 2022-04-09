@@ -20,7 +20,7 @@ final class Persona
 
     /**
      * Checks if app has registered roles.
-     * 
+     *
      * @return bool
      */
     public static function hasRoles(): bool
@@ -30,7 +30,7 @@ final class Persona
 
     /**
      * Checks if app has registered permissions.
-     * 
+     *
      * @return bool
      */
     public static function hasPermissions(): bool
@@ -80,7 +80,7 @@ final class Persona
     {
         static::$permissions = $permissions;
 
-        return new static;
+        return new static();
     }
 
     /**
