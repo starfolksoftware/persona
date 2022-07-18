@@ -52,6 +52,8 @@ class TestCase extends Orchestra
                 ],
             ],
         ]);
+
+        config()->set('persona.default_role', 'cashier');
     }
 
     protected function setUpDatabase()

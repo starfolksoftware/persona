@@ -17,3 +17,18 @@ test('user permission can be checked', function () {
 
     expect($user->hasPermission('non-existing-permission'))->toBe(false);
 });
+
+test('a default role can be set', function () {
+    $user = UserWithRole::forceCreate([
+        'name' => 'Test User',
+        'email' => 'test@example.com',
+        'password' => 'test',
+        'role' => 'cashier',
+    ]);
+
+    expect($user->role)->toBe('cashier');
+    expect($user->hasRole('cashier'))->toBe(true);
+    expect($user->hasRole('owner'))->toBe(false);
+    expect($user->name)->toBe('Test User');
+    expect($user->email)->toBe('test@example.com');
+});

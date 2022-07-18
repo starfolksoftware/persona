@@ -8,4 +8,6 @@ return [
         //     'permissions' => ['*'],
         // ],
     ],
+
+    'default_role' => null,
 ];
