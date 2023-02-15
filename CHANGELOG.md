@@ -2,6 +2,10 @@
 
 All notable changes to `persona` will be documented in this file.
 
+## v1.0.2 - 2023-02-15
+
+Supports Laravel 10
+
 ## v1.0.1 - 2022-07-18
 
 ### What's Changed
